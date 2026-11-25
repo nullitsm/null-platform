@@ -1,0 +1,45 @@
+# NULL Platform — component repository manifest
+# The master repo tracks these repositories. Status values:
+# live | in-development | planned
+
+components:
+  - name: frontend
+    role: "ITSM screens — the user-facing product (sign-in, Command Center, Tickets, Requests, Knowledge Base, Service Catalog, Endpoints, Patching, Vulnerabilities, CMDB, Changes, Problem Management, Analytics, Platform Settings, Users & Roles)"
+    repo: nullitsm/nullitsm.github.io
+    url: https://github.com/nullitsm/nullitsm.github.io
+    site: https://nullitsm.github.io/
+    branch: main
+    status: live
+    notes: "GitHub Pages site. Baseline head at master-repo creation: be38333228373760cad736a876b8305c150c79f6. Static screens with browser (localStorage/sessionStorage) persistence until the backend integration lands."
+
+  - name: backend
+    role: "FastAPI modular monolith — multi-tenant API, auth (OIDC/MFA), organizations, users & roles, audit logging, ITSM engine, endpoint management APIs"
+    repo: nullitsm/null-itsm-api
+    url: https://github.com/nullitsm/null-itsm-api
+    branch: main
+    status: in-development
+    notes: "Being built in ~/workspace/null-itsm-api/ (local git). GitHub remote to be created when the Phase 1 foundation lands. Defines the agent API contract (enrollment, heartbeat, job execution, results); the agent implementation lives in its own repo."
+
+  - name: endpoint-agent
+    role: "NULL Endpoint Agent — separately managed component: secure device enrollment, device identity, agent authentication, heartbeats, hardware/software/OS inventory, remote management job execution, execution results, signed agent updates"
+    repo: nullitsm/null-endpoint-agent
+    url: https://github.com/nullitsm/null-endpoint-agent
+    branch: main
+    status: planned
+    notes: "Phase 3. Created when endpoint engine work starts. Contract is defined by the backend repo; implementation lives here."
+
+  - name: integrations
+    role: "API integrations, webhooks, email integrations, external identity providers, and integration adapters shared across modules"
+    repo: nullitsm/null-integrations
+    url: https://github.com/nullitsm/null-integrations
+    branch: main
+    status: planned
+    notes: "Phase 4. Created when integration work starts."
+
+  - name: infrastructure
+    role: "Infrastructure as code — Docker, AWS-compatible definitions (ECS Fargate, RDS Postgres, ElastiCache Redis, S3, Cognito, CloudWatch, Secrets Manager), CI/CD, deployment automation, backup/recovery procedures"
+    repo: nullitsm/null-infrastructure
+    url: https://github.com/nullitsm/null-infrastructure
+    branch: main
+    status: planned
+    notes: "Phase 1 as code only (no provisioning). AWS resources require explicit infrastructure approval; no charges until approved. Created when infra work starts; until then IaC lives with the backend repo's Docker/dev setup."
