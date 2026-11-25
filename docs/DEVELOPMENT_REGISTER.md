@@ -98,3 +98,17 @@ final navigation structure (Command Center, Service Management, IT
 Operations, Security, Infrastructure, ITSM Workflows, Automation, Analytics,
 Administration, Platform Management), and 12 personas with per-persona
 workspaces and permissions.
+
+## Administrative domain separation (Nov 25, 2026)
+
+| Requirement | Status |
+| --- | --- |
+| Organization Users page (separate from Platform Admin Users) | In progress (frontend) |
+| Platform Admin Users page | In progress (frontend) |
+| Navigation split (Organization Administration / Platform Administration, platform group gated) | In progress (frontend) |
+| Tenant Management page | In progress (frontend) |
+| Platform Audit Logs page (append-only) | In progress (frontend) |
+| Separate org vs platform permission namespaces | In progress (backend) |
+| Backend enforcement of all restrictions | In progress (backend) |
+| Migration strategy (no silent elevation, flag unclassifiable accounts) | In progress (backend) |
+| Security tests (tenant isolation, role separation, privilege boundaries) | Not started |

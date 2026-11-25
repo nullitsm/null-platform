@@ -201,3 +201,36 @@ Service Desk Managers, Service Desk Technicians, Endpoint Administrators,
 Security Analysts, Network Administrators, Change Managers, Auditors,
 Employees / Requesters, External Vendors. Each gets an appropriate workspace
 and permissions; the RBAC model is built around these personas.
+
+## Administrative domains — organization vs platform (Nov 25, 2026)
+
+User management is split into two independent administrative domains with
+separate authorization boundaries, user scopes, and permissions — not two
+filters on one directory.
+
+- **Organization Administration**: Organization Users, Organization Roles &
+  Permissions. Customer organization users only, scoped to their own org.
+  Org roles: Organization Administrator, IT Operations, Service Desk
+  Technician, Endpoint Administrator, Security Analyst, Change Manager,
+  Auditor, Employee / Requester (plus org-created custom roles within
+  subscription limits).
+- **Platform Administration**: Platform Admin Users, Platform Roles &
+  Permissions, Tenant Management, Platform Audit Logs, Platform Settings.
+  NULL internal personnel only. Visible only to users with explicitly
+  assigned platform-level permissions; never exposed to ordinary customer
+  org administrators. Platform roles: Platform Super Admin, Platform
+  Administrator, Platform Support, Security Administrator, Billing
+  Administrator, Platform Auditor. Only Platform Super Admin manages the
+  highest-level platform permissions.
+- Enforcement is backend, not navigation visibility: separate models /
+  identity and membership relationships, separate permission namespaces,
+  tenant membership checks on every endpoint, no auto-conversion of org
+  admins into platform admins, no self-escalation, MFA required for
+  privileged platform access, platform access to tenant data logged,
+  explicit authorization for cross-tenant support access, privileged
+  operations in append-only audit logs.
+- Migration: preserve accounts and credentials, associate customer users
+  with their org, identify internal platform admins explicitly, never assume
+  every Administrator is a Platform Administrator, never silently grant
+  elevated permissions, preserve audit history, rollback possible; flag
+  unclassifiable accounts for manual review instead of guessing.
