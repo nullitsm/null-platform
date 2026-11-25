@@ -55,3 +55,46 @@ done | blocked | deferred.
 - Frontend rounds to settle before backend frontend-integration work.
 - GitHub remote for the backend repo (to be created when Phase 1 lands).
 - Baseline frontend head: `be38333228373760cad736a876b8305c150c79f6`.
+
+## Expanded scope — competitive gaps (Nov 25, 2026)
+
+Added to the master build: make NULL commercially competitive with
+ServiceNow, ManageEngine, and Jira Service Management.
+
+| Requirement | Tier | Status |
+| --- | --- | --- |
+| Email-to-ticket and email notifications | Essential | Not started |
+| Employee self-service portal | Essential | Not started |
+| Advanced SLA and escalation engine | Essential | Not started |
+| Asset lifecycle and software licensing | Essential | Not started |
+| SAML, SCIM and directory integrations | Essential | Not started |
+| Customer data import and export | Essential | Not started |
+| Platform administration console | Essential | Not started |
+| Subscription billing and usage metering | Essential | Not started |
+| Backup and disaster recovery | Essential | Not started |
+| Security testing and monitoring | Essential | Not started |
+| Network operations and monitoring | Enterprise | Not started |
+| Advanced workflow orchestration | Enterprise | Not started |
+| On-call scheduling | Enterprise | Not started |
+| Major incident management | Enterprise | Not started |
+| Service dependency mapping | Enterprise | Not started |
+| Advanced reporting and custom dashboards | Enterprise | Not started |
+| API developer portal | Enterprise | Not started |
+| Release management and feature flags | Enterprise | Not started |
+| Customer support and status page | Enterprise | Not started |
+| Compliance and evidence management | Enterprise | Not started |
+| NULL Intelligence AI assistant | Differentiator | Not started |
+| Threat intelligence workspace | Differentiator | Not started |
+| Infrastructure intelligence and topology | Differentiator | Not started |
+| Predictive operational analytics | Differentiator | Not started |
+| Automated vulnerability correlation | Differentiator | Not started |
+| Cross-module remediation orchestration | Differentiator | Not started |
+
+Also in scope: GRC module (SOC 2 / ISO 27001 / NIST CSF / CIS mappings —
+helps customers manage compliance, does NOT certify NULL), integration
+framework (Entra ID, Intune, Greenbone, Defender, Slack, Teams, GitHub,
+Power BI, SMTP, M365, Google Workspace, AD, LDAP, SNMP, webhooks, payments),
+final navigation structure (Command Center, Service Management, IT
+Operations, Security, Infrastructure, ITSM Workflows, Automation, Analytics,
+Administration, Platform Management), and 12 personas with per-persona
+workspaces and permissions.
