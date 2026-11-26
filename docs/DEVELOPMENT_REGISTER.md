@@ -108,7 +108,9 @@ workspaces and permissions.
 | Navigation split (Organization Administration / Platform Administration, platform group gated) | In progress (frontend) |
 | Tenant Management page | In progress (frontend) |
 | Platform Audit Logs page (append-only) | In progress (frontend) |
-| Separate org vs platform permission namespaces | In progress (backend) |
-| Backend enforcement of all restrictions | In progress (backend) |
-| Migration strategy (no silent elevation, flag unclassifiable accounts) | In progress (backend) |
-| Security tests (tenant isolation, role separation, privilege boundaries) | Not started |
+| Separate org vs platform permission namespaces | Complete (backend, Phase 1 — migrations 0002–0003, 54/54 tests passing, verified by parent Nov 25) |
+| Backend enforcement of all restrictions | Complete (backend, Phase 1 — RLS + grant-scope + MFA step-up + support grants, live-boot verified Nov 25) |
+| Migration strategy (no silent elevation, flag unclassifiable accounts) | Complete (backend, Phase 1 — documented in repo docs/SECURITY.md) |
+| Security tests (tenant isolation, role separation, privilege boundaries) | Complete (backend, Phase 1 — 19 platform tests, 54/54 total passing) |
+
+**Backend Phase 1 complete (Nov 25, 2026):** FastAPI modular monolith, PostgreSQL + RLS, Redis/Celery, OIDC-ready auth (local dev JWT; Cognito in production), Argon2id, TOTP MFA, 8-role org RBAC, two-domain org/platform model, append-only audit, docs (DATA_MODEL, API_CONTRACT §7.8 platform namespace, SECURITY, DECISIONS, FRONTEND_INTEGRATION, JS client). Repo `~/workspace/null-itsm-api/`, 7 commits, head `be836d0`; GitHub remote `nullitsm/null-itsm-api` being created and pushed by the parent. Docker NOT available in the VM — compose files are code-only; verification used local PostgreSQL 16 + Redis 7. AWS provisioning, Cognito, staging deployment all still gated on infrastructure approval; nothing provisioned, nothing spent. Phase 2 (ITSM engine + Tier 1: email-to-ticket, self-service portal, advanced SLA, SAML/SCIM, import/export) starts next.
